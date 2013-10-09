@@ -1,0 +1,13 @@
+Options +FollowSymlinks
+
+#START rewrite
+
+    RewriteEngine on
+	
+	#RewriteCond %{HTTP_HOST} ^opp.cz
+	#RewriteRule (.*) http://www.opp.cz/$1 [R=301,QSA,L]
+
+	RewriteRule ^system/(.*) esh-system.php?pos=$1 [L,QSA]
+	RewriteRule (.*) index.php?pos=$1 [L,QSA]
+	
+#END rewrite
